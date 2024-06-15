@@ -1,0 +1,55 @@
+
+{% extends "user/index.html" %}
+{% load crispy_forms_tags %}
+{% load static   %}
+
+{% block start %}
+<html>
+<style>
+    
+
+
+
+    .index{display: flex;
+flex-direction: row;
+align-items: center;
+padding: 20px;
+margin-top: 100px;
+justify-content: space-around;
+position: relative;
+}
+
+
+
+.image{width: 250px;
+height: 250px;
+border-radius: 10px;
+transition: 0.2s;}
+
+.image:hover{-ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); }
+</style>
+<body>
+    
+
+<center><h1>OUR SMALL TEAMS WITH MORE HAPPINESS</h1>
+<h5>Since 2024</h5></center>
+<div class="index">
+
+<a href="{% url "academics" %}"><span><img   class="image" src="{% static 'html.png' %}" alt=""><div><center>HTML</center></div></span></a>
+<a href="{% url "academics" %}"><span><img class="image" src="{% static 'javascript.png' %}" alt=""><div><center>JAVASCRIPT</center> </div></span></a>
+<a href="{% url "academics" %}"><span><img class="image" src="{% static 'nodejs.png' %}" alt=""><div><center>NODEJS</center></div>
+
+</span></a>
+<a href="{% url "academics" %}"><span><img class="image" src="{% static 'python.jpg' %}" alt=""><div><center>PYTHON</center></div>
+
+</span></a>
+
+</div>
+
+
+
+</body>
+</html>
+{% endblock start %}

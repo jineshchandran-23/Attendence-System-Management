@@ -1,0 +1,58 @@
+{% extends "user/index.html" %}
+
+{% load crispy_forms_tags %}
+{% load static   %}
+{% block start %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static "team.css" %}" />
+
+<section class="about-me" id="about-me">
+    <div class="container">
+      <div class="about-me-container">
+        <div class="about-me-title">
+          About <br> Jinesh Chandran
+        </div>
+  
+        <div class="about-me-flex-container">
+          <div class="about-me-image">
+            <div class="back-div"></div>
+            <div class="black-image"><img src="{% static 'img.jpg' %}" alt="black"></div>
+            <div class="main-image"><img src="{% static 'img.jpg' %}" alt="smit"></div>
+          </div>
+          <div class="about-me-content">
+  
+            
+  
+            <div class="text">
+              An ambitious Front-end Developer and designer who takes great pride in the presentation and quality of work. 
+  
+              <br><br>
+  
+              Smit is someone who can design and create simple, beautiful and easy to understand things. He is an expert at taking designs into original, exciting and new directions. 
+            <div>   </div>
+            <div>Contact:9074712867</div>
+            <div>Email:jineshnangeliyathu@gmail.com</div></div>
+          </div>
+        </div>
+  
+       
+  
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  <br><br>
+  <div class = "portfolio-link">
+    <a href="" target="_blank"> My Portfolio </a>
+    <a href="" target="_blank"> UI Design by NewStart Developers </a>
+  </div>
+  
+
+{% endblock start %}

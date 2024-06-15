@@ -1,0 +1,236 @@
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="title" content="project">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="vinayak sharma">
+
+<title>{{title}}</title>
+
+
+<!-- bootstrap file -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- bootstrap file-->
+<script src="{% static "side.js" %}"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static " side.css" %}">
+<!-- main css -->
+
+<link rel="stylesheet" type="text/css" href="{% static "main.css" %}" />
+<link rel="shortcut icon" href="{%  static 'Icona.ico' %}">
+<!-- message here -->
+
+{% if messages %}
+{% for message in messages %}
+
+<script>
+	alert("{{ message }}");
+</script>
+
+{% endfor %}
+{% endif %}
+
+<!--_______________________________________________-->
+
+
+
+</head>
+
+<body class="container-fluid">
+
+
+<header class="row">
+
+	<!-- navbar-->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<button class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" class="styleheader" href="{% url "index" %}"><head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+		
+			
+			.sidebar {
+			  height: 100%;
+			  width: 0;
+			  position: fixed;
+			  z-index: 1;
+			  top: 0;
+			  left: 0;
+			  background-color: #111;
+			  overflow-x: hidden;
+			  transition: 0.5s;
+			  padding-top: 60px;
+			}
+			
+			.sidebar a {
+			  padding: 8px 8px 8px 32px;
+			  text-decoration: none;
+			  font-size: 20px;
+			  color: #818181;
+			  display: block;
+			  transition: 0.25s;
+			}
+			
+			.sidebar a:hover {
+				background-color: antiquewhite;
+			  color: #0b0101;
+			}
+			
+			.sidebar .closebtn {
+			  position: absolute;
+			  top: 0;
+			  right: 25px;
+			  font-size: 25px;
+			  margin-left: 50px;
+			}
+			
+			.openbtn {
+			 font-size: 15px;
+			
+			  cursor: pointer;
+			background-color: #0b0101;
+			  color: rgb(229, 216, 216);
+			  padding: 10px 15px;
+			  border: none;
+			}
+			
+			
+			#main {
+			  transition: margin-left .5s;
+			  padding: 16px;
+			}
+			
+			/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+			@media screen and (max-height: 450px) {
+			  .sidebar {padding-top: 15px;}
+			  .sidebar a {font-size: 18px;}
+			}
+			</style>
+			</head>
+			<body>
+			
+			<div id="mySidebar" class="sidebar">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			  <a href="{% url "members" %}">MY Members</a>
+			  <a href="{% url "myaccount" %}">Admin </a>
+			  <a href="{% url "attendence" %}">Attendance</a>
+			  <a href="{% url "myteam" %}">MY Team</a>
+			  <a href="{% url "About" %}">Contact Us</a>
+			  <a href="{% url "index" %}">Home</a>
+			  <a href="{% url "login" %}">Logout</a>
+
+			</div>
+			
+			<div id="main">
+			  <button class="openbtn" onclick="openNav()">☰ </button>  
+			 
+			
+			<script>
+			function openNav() {
+			  document.getElementById("mySidebar").style.width = "250px";
+			  document.getElementById("main").style.marginLeft = "250px";
+			}
+			
+			function closeNav() {
+			  document.getElementById("mySidebar").style.width = "0";
+			  document.getElementById("main").style.marginLeft= "0";
+			}
+			</script>
+			   
+			</body>
+			</html>
+			<a href="{% url "index" %}"><img class="img1" src="{% static 'home (1).png' %}" >
+			</a>
+			<a href="{% url "login" %}"><img class="img2" src="{% static 'exit.png' %}" ></a>
+			<a href="/" ><img class="img3" src="{% static 'backs.png' %}" ></a>
+			<a href="{% url "index" %}" ><img class="p" src="{% static 'p.gif' %}" ></a>
+		
+		</div>
+	
+	
+
+
+	</div>
+	</div>
+	</nav>
+</header>
+<br/>
+<br>
+<br>
+<div class="row">
+	{% block start %}
+	{% if user.is_authenticated %}
+	<center><h1>Welcome To NewStart Developers !!</h1></center>
+
+
+	<div class="index"> 
+	
+	<a href="{% url "attendence" %}"> <img class="image" src="{% static 'interior.jpg' %}" ><div class="students"><center><h5>ATTENDENCE</h5></center></div></a>
+	<a href="{% url "myteam" %}"><img class="image" src="{% static 'text.jpg' %}" ><div class="students"><center><h5>MY TEAM</h5></center></div></a>
+	<a href="{% url "myaccount" %}"><img class="image" src="{% static 'cute.jpg' %}" ><div class="students"><center><h5>ADMIN PANEL</h5></center></div></a>
+	<a  href="{% url "About" %}"><img class="image" src="{% static 'img.jpg' %}" ><div class="st"><center><h5>ABOUT US</h5></center></div></a>
+	</a>
+   </div>
+
+
+
+	{% else %}
+	<center><h1>WELCOME TO NewStart Developers</h1></center>
+    <center><h3>please login to your account</h3></center>
+	{% endif %}
+	{% endblock %}
+
+</div>
+</body>
+
+
+</body>
+</html>
+
+<style>
+	.footer {
+	  position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  background-color: rgb(11, 2, 2);
+	  color: white;
+	  text-align: center;
+	}
+	</style>
+	
+	<div class="footer">
+	  <p>Copyright &copy; NewStart Developers</p>
+	  {% if user.is_authenticated %}
+            <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span>  </a></li>
+            {% else %}
+            <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span>   Sign up</a></li>
+            <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span>   Log in</a></li>
+            {% endif %}
+	</div>
+
+
+</html>
